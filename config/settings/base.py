@@ -38,10 +38,10 @@ USE_TZ = True
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///nomadgram'),
-}
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+# DATABASES = {
+#     'default': env.db('DATABASE_URL', default='postgres:///nomadgram'),
+# }
+# DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # URLS
 # ------------------------------------------------------------------------------
@@ -63,7 +63,6 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = [
-    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -72,6 +71,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'nomadgram.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
+    'nomadgram.images.apps.ImagesConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
